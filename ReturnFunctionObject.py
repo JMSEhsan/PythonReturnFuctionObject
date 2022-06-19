@@ -7,11 +7,14 @@ def grumpy():
         print("No", n, "times...")
         def no_m_more_times(m):
             print("...and no", m, "more times")
-            for i in range(n+m):
-                print("no")
+            def no_k_less_times(k):
+                print("...and no", k, "times less")
+                for i in range(n+m-k):
+                    print("no")  
+            return no_k_less_times
         return no_m_more_times
     return no_n_times
-grumpy()(4)(2)
+grumpy()(8)(2)(3)
 
 
 
